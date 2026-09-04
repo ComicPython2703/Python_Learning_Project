@@ -1,0 +1,18 @@
+# coding=utf-8
+print("尼")
+print("你好，蘑菇啊")
+print("GO DIE")
+print("DIE DIE DIE"*100)
+print(" DIE ? 死"*100)
+print(" DIE ? 死"*100)
+print(" DIE ? 死"*100)
+print(" DIE ? 死"*100)
+print(" DIE ? 死"*100)
+print(" DIE ? 死"*100)
+print("DIE DIE DIE"*100)
+print("DIE DIE DIE"*100)
+print("DIE DIE DIE"*100)
+print("你好，蘑菇啊")
+print("你好，蘑菇啊")
+print("你好，蘑菇啊")
+

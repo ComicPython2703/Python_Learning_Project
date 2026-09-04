@@ -1,0 +1,23 @@
+# coding=utf-8
+import turtle
+t = turtle.Turtle()
+t.speed(0)
+t.width(20)
+a = turtle.textinput("叶片个数", "3-8之间")
+a = int(a)
+b = turtle.textinput("边数", "3-8之间")
+b = int(b)
+c = turtle.textinput("颜色", "单词")
+turtle.bgcolor(c)
+t.setheading(90)
+t.color("grey")
+t.forward(-200)
+t.forward(200)
+t.setheading(0)
+t.color("yellow")
+for i in range(a):
+    t.circle(80, 360, b)
+    t.left(360 / a)
+t.hideturtle()
+t.dot(20, "black")
+turtle.done()

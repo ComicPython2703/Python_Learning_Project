@@ -1,0 +1,8 @@
+version: 1.0
+profile:
+  name: qodana.starter
+linter: jetbrains/qodana-<linter>:latest
+exclude:
+  - name: PyPep8NamingInspection
+    paths:
+      - PPPPPYTHOOOOOOOON\8.4.py

@@ -1,0 +1,6 @@
+sympy~=1.14.0
+setuptools~=80.9.0
+pygame~=2.6.1
+requests~=2.32.4
+pip~=25.1.1
+lxml~=6.0.0

@@ -1,0 +1,7 @@
+tk.Radiobutton(frame1, text="小学英语/三上", variable=self.v, value=0,
+                       font=("Microsoft JhengHei Ui", 18)).pack()
+        tk.Radiobutton(frame1, text="小学英语/三下", variable=self.v, value=1,font=("Microsoft JhengHei Ui", 18)).pack()
+        tk.Radiobutton(frame1, text="小学英语/四上", variable=self.v, value=2,
+                       font=("Microsoft JhengHei Ui", 18)).pack()
+        tk.Radiobutton(frame1, text="小学英语/四下", variable=self.v, value=3,
+                       font=("Microsoft JhengHei Ui", 18)).pack()

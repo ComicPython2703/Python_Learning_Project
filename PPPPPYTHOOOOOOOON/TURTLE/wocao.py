@@ -1,0 +1,87 @@
+# coding=utf-8
+import turtle
+
+t = turtle.Turtle()
+
+t.color("red")
+t.penup()
+t.goto(-150, 150)
+t.pendown()
+# 第一个长方形
+t.fillcolor("red")
+t.begin_fill()
+t.forward(50)
+t.right(90)
+t.forward(400)
+t.right(90)
+t.forward(50)
+t.right(90)
+t.forward(400)
+t.end_fill()
+# 第二个长方形
+t.penup()
+t.goto(100, 150)
+t.pendown()
+t.fillcolor("red")
+t.begin_fill()
+t.right(90)
+t.forward(50)
+t.right(90)
+t.forward(400)
+t.right(90)
+t.forward(50)
+t.right(90)
+t.forward(400)
+t.end_fill()
+# 横幅
+t.penup()
+t.goto(-100, 200)
+t.fillcolor("red")
+t.begin_fill()
+t.pendown()
+t.right(90)
+t.forward(200)
+t.left(90)
+t.forward(50)
+t.left(90)
+t.forward(200)
+t.left(90)
+t.forward(50)
+t.end_fill()
+# 写字
+t.penup()
+t.goto(-125, -250)
+t.pendown()
+t.color("black")
+# noinspection PyTypeChecker
+t.write("落\n霞\n与\n孤\n鹜\n齐\n飞", align="center", font=("Microsoft YaHei", 30))
+
+t.penup()
+t.goto(125, -250)
+t.pendown()
+t.color("black")
+# noinspection PyTypeChecker
+t.write("秋\n水\n共\n长\n天\n一\n色", align="center", font=("Microsoft YaHei", 30))
+t.penup()
+t.goto(0, 200)
+# noinspection PyTypeChecker
+t.write("滕王阁序", align="center", font=("Microsoft YaHei", 30))
+# 印章
+t.penup()
+t.goto(-260, -200)
+t.pendown()
+t.color("red")
+t.fillcolor("red")
+t.begin_fill()
+for i in range(4):
+    t.forward(100)
+    t.right(90)
+t.end_fill()
+t.color("black")
+t.penup()
+t.goto(-310, -300)
+t.pendown()
+# noinspection PyTypeChecker
+t.write("我爱\n学习", align="center", font=("华文行楷", 30))
+
+turtle.done()

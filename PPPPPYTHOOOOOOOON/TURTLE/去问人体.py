@@ -1,0 +1,67 @@
+# coding=utf-8
+import random
+import turtle
+t = turtle.Turtle()
+t.speed(0)
+# 第一个内容
+t.hideturtle()
+for i in range(30):
+    x = random.randint(-200, 200)
+    y = random.randint(-200, 200)
+    r = random.random()
+    g = random.random()
+    b = random.random()
+    t.penup()
+    t.goto(x, y)
+    t.pendown()
+    t.color(r, g, b)
+    t.begin_fill()
+    if i % 3 == 0:  # 如果i对3取余=0：
+        t.circle(20, steps=3)  # turtle.画园(半径：20，步长=3) 画三角形
+    else:  # 否则
+        t.circle(20)  # turtle.画园(半径：20)
+    t.end_fill()
+# 第二个内容
+t.width(3)
+t.color("red")
+# draw the face
+t.penup()
+t.goto(0, -200)
+t.pendown()
+t.fillcolor("yellow")
+t.begin_fill()
+t.circle(200)
+t.end_fill()
+t.penup()
+t.goto(80, 65)
+t.pendown()
+# draw the eyes
+t.color("brown")
+t.fillcolor("white")
+t.begin_fill()
+t.circle(30)
+t.end_fill()
+t.fillcolor("black")
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+t.penup()
+t.goto(-80, 65)
+t.pendown()
+t.fillcolor("white")
+t.begin_fill()
+t.circle(30)
+t.end_fill()
+t.fillcolor("black")
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+# draw the mouse
+t.penup()
+t.goto(0, -140)
+t.pendown()
+t.color("brown")
+t.circle(140, 60)
+t.circle(140, -120)
+t.hideturtle()
+turtle.done()

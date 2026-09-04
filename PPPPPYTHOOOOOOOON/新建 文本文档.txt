@@ -1,0 +1,3 @@
+    
+    
+D:\Python38\python.exe -X pycache_prefix=C:\Users\EDY\AppData\Local\JetBrains\PyCharmCE2024.1\cpython-cache "C:/Program Files/JetBrains/PyCharm Community Edition 2024.1.2/plugins/python-ce/helpers/pydev/pydevd.py" --multiprocess --qt-support=auto --client 127.0.0.1 --port 50836 --file E:\Python\PPPPPYTHOOOOOOOON\10.13（多态）.py 

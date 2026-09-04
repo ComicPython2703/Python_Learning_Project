@@ -1,0 +1,88 @@
+import tinter
+from tkinter import messagebox
+root = Tk()
+root.geometry('600x400')
+files = [
+    "三年级上.txt",
+    "三年级下.txt",
+    "四年级上.txt",
+    "四年级下.txt",
+    "五年级上.txt",
+    "五年级下.txt",
+    "六年级上.txt",
+    "六年级下.txt",
+]
+class ZhuJieMian():
+    def __init__(self):
+        self.creat_widget()
+
+    def creat_widget(self):  # 主界面组件
+        self.frame = Frame(root)
+        self.frame.pack()
+        l1 = Label(self.frame, text="开心背单词", font=("", 30))
+        l1.pack()
+        frame1 = Frame(self.frame)
+        frame1.pack(side=LEFT,padx=20,pady=20)
+        self.v = IntVar()
+        for i in range(len(files)):
+            print(i)
+            print(self.v)
+            Radiobutton(frame1, text=files[i][:-4], variable=self.v, value=i,font=("",15)).pack()
+
+        frame2 = Frame(self.frame)
+        frame2.pack(side=RIGHT,padx=20,pady=20)
+        but1 = Button(frame2, text="开始背诵", command=self.goto_beidanci)
+        but1.pack(pady=20)
+        but2 = Button(frame2, text="开始测试", command=self.goto_ceshi)
+        but2.pack(pady=20)
+
+    def goto_beidanci(self):  # 去背单词界面
+        self.read_file()  #读取文件
+        self.frame.destroy() #关闭当前窗口
+        BeiDanCi() #打开背单词窗口
+    def goto_ceshi(self):  # 去测试界面
+        self.read_file()  #读取文件
+        self.frame.destroy()  #关闭当前窗口
+        CeShi()   #打开测试窗口
+
+
+    words_list=[]
+    def read_file(self):  # 读取单词文件
+        f=open("三年级上.txt","rt",encoding="utf-8")
+class BeiDanCi():
+    pass
+class CeShi():
+    pass
+ZhuJieMian()
+root.mainloop()
+
+
+
+
+        frame2 = tk.Frame(self.frame)
+        frame2.pack()
+        tk.Radiobutton(frame2, variable=self.v, value=0, textvariable=self.word_ch_0, font=(None, 22)).grid(row=3,column=0,padx=20,pady=10,stick=tk.W)
+        tk.Radiobutton(frame2, variable=self.v, value=1, textvariable=self.word_ch_1, font=(None, 22)).grid(row=3,column=1,padx=20,pady=10,stick=tk.W)
+        tk.Radiobutton(frame2, variable=self.v, value=2, textvariable=self.word_ch_2, font=(None, 22)).grid(row=4,column=0,padx=20,pady=10,stick=tk.W)
+        tk.Radiobutton(frame2, variable=self.v, value=3, textvariable=self.word_ch_3, font=(None, 22)).grid(row=4,column=1,padx=20,pady=10,stick=tk.W)
+        frame3 = tk.Frame(self.frame)
+        frame3.pack()
+        tk.Button(frame3, text="返回", command=self.back, font=(None, 22)).grid(row=1,column=0,padx=10,pady=10)
+if self.count >= len(words_list):
+            tkinter.messagebox.showinfo('提示','测试已结束')
+            self.back()
+        else:
+            # 新单词展示
+            self.v.set(-1) # 默认选项清空
+            word = words_list.pop(0)  # 移除列标中的第一个元素，并返回这个元素赋值给变量word
+            self.word_eg.set(word[0])  # 将新列表word中的第0项，英文单词设置为题目
+            self.word_sound.set(word[1]) # 将新列表word中的第1项，音标设置为题目
+            self.index = random.randint(0,3) #在0,1,2,3中随机一个数
+            words = random.sample(words_list, 3)  # 从剩余单词列表中随机选择3个单词作为干扰项
+            words.insert(self.index, word) # 随机插入0,1,2,3中某一位置
+            self.word_ch_0.set(words[0][2])  # 将所有汉语设置位选项
+            self.word_ch_1.set(words[1][2])
+            self.word_ch_2.set(words[2][2])
+            self.word_ch_3.set(words[3][2])
+            words_list.append(word) # 将列表最前面被移除的元素放到列表的末尾。
+            self.count += 1
