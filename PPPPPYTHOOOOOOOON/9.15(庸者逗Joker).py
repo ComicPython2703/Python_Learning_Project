@@ -2,15 +2,6 @@
 """
 Title=勇者斗🤡
 """
-# Problematic code with an invalid escape sequence
-print(
-        '正在运行程式："C:\Program Files\python\python.exe" "C:/Program Files/JetBrains/PyCharm Community Edition '
-        '2023.1/plugins/python-ce/helpers/pydev/pydevd.py" --multiprocess --qt-support=auto --client 127.0.0.1 --port '
-        '57377 --file "D:\Python\PPPPPYTHOOOOOOOON\9.15(庸者逗Joker).py" ')
-print("====================== RESTART:庸者逗Joker.py =====================")
-print("已连接到 Game-Debugger 调试器(内部版本号 231.9423.5)")
-
-
 # noinspection PyPep8Naming
 def Copyright():
     print(
@@ -46,7 +37,7 @@ class Hero:
         self.health = 100000
         self.mp = 2000
         self.level = 114514
-        self.atk = random.randint(2146, 5213)
+        self.atk = random.randint(2146, 26415)
         self.defend = 1348
 
     def attack(self, ender_dragon):
@@ -104,7 +95,7 @@ class Hero:
 class Ender_Dragon:
     def __init__(self, name):
         self.name = name
-        self.health = 100000
+        self.health = 1000000
         self.afk = random.randint(23487, 30584)
         self.dfs = random.randint(100, 500)
         self.afkforlongxi = random.randint(3000, 6000)

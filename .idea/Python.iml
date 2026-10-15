@@ -5,12 +5,13 @@
       <sourceFolder url="file://$MODULE_DIR$/PPPPPYTHOOOOOOOON" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TEST" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Homework" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lesson-new" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/PPPPPYTHOOOOOOOON/TK库/examples" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/.venv1" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (Python)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="seErrorRec" level="application" />
     <orderEntry type="library" name="baidu" level="application" />
