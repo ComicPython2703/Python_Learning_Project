@@ -46,11 +46,11 @@ class Hero:
 
     def attack(self, ender_dragon):
         if self.critical_hit >= 50:
-            shanghai = self.atk - ender_dragon.dfs
+            shanghai = (self.atk - ender_dragon.dfs)*30
             ender_dragon.health = ender_dragon.health - shanghai
         else:
             print("暴击!")
-            shanghai = self.atk * 5
+            shanghai = self.atk * 80
             ender_dragon.health = ender_dragon.health - shanghai
             
         print(f'成功的对{ender_dragon.name}造成了{shanghai}伤害')
@@ -111,7 +111,7 @@ class Hero:
 class Ender_Dragon:
     def __init__(self, name):
         self.name = name
-        self.health = 1000000
+        self.health = 97846251
         self.afk = random.randint(23487, 30584)
         self.dfs = random.randint(10, 500)
         self.afkforlongxi = random.randint(3000, 6000)
