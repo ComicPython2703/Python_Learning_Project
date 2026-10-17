@@ -17,14 +17,16 @@ if __name__ == '__main__':
     print()
 # =========={准备工作}==================
 import random
+import subprocess
 
 
 if __name__ == '__main__':
+    
     print("////////////////勇者斗周克\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\")
     print('<------------------[Ender-Dragon]---------------------------->')
 a = random.randint(1, 10)
 b = random.randint(1, 4)
-c = 0
+c = 0 # 诅咒次数
 
 
 # ============{分隔符}==================
@@ -35,14 +37,22 @@ class Hero:
     def __init__(self, name):
         self.name = name
         self.health = 100000
-        self.mp = 2000
+        self.mp = 20000
         self.level = 114514
-        self.atk = random.randint(2146, 26415)
-        self.defend = 1348
+        self.atk = random.randint(21460, 100000)
+        self.use_mp = random.randint(3000,5000)
+        self.critical_hit = random.randint(1,100)
+        self.defend = 2426
 
     def attack(self, ender_dragon):
-        shanghai = self.atk - ender_dragon.dfs
-        ender_dragon.health = ender_dragon.health - shanghai
+        if self.critical_hit >= 50:
+            shanghai = self.atk - ender_dragon.dfs
+            ender_dragon.health = ender_dragon.health - shanghai
+        else:
+            print("暴击!")
+            shanghai = self.atk * 5
+            ender_dragon.health = ender_dragon.health - shanghai
+            
         print(f'成功的对{ender_dragon.name}造成了{shanghai}伤害')
 
     def curse(self, ender_dragon):
@@ -51,18 +61,22 @@ class Hero:
         if r == 0 and c == 0:
             shanghai = self.atk * 2
             ender_dragon.health -= shanghai
-            self.mp -= 300
+            self.mp -= self.use_mp
+            
             print('诅咒成功!,造成了%d伤害,诅咒已结束,退出代码：0' % shanghai)
             c += 1
         else:
+            
             print('[ERROR]非零退出诅咒！退出代码：1')
 
     def treatment(self):  # 治疗
         if self.mp > 0:
-            self.health += 200
-            self.mp -= 1
+            self.health += 327670
+            self.mp -= self.use_mp
+            
             print('治疗成功!,当前生命值：%d,治疗已结束,退出代码：0' % self.health)
         else:
+            
             print('[ERROR]非零退出治疗！退出代码：1')
 
     @staticmethod
@@ -76,9 +90,11 @@ class Hero:
     @staticmethod
     def master_ball(ender_dragon):
         if a >= 5:
+            
             print(f"你收容了{ender_dragon.name}，退出代码：0")
             exit()
         else:
+            
             print(f"收容失败，退出代码：1")
 
     @staticmethod
@@ -97,7 +113,7 @@ class Ender_Dragon:
         self.name = name
         self.health = 1000000
         self.afk = random.randint(23487, 30584)
-        self.dfs = random.randint(100, 500)
+        self.dfs = random.randint(10, 500)
         self.afkforlongxi = random.randint(3000, 6000)
 
     def attack(self, hero):
@@ -109,7 +125,7 @@ class Ender_Dragon:
         r = random.randint(1, 2)
         if r == 1:
             damage = self.afk * 2
-            hero.health = hero.health - damage
+            hero.health = hero.health - self.afk        
             print('ender_dragon喷火了，造成了%d的伤害' % damage)
 
     def treatment(self):
@@ -119,11 +135,15 @@ class Ender_Dragon:
             return False
 
     def spit_Dragon_Breath(self, hero):
-        r = random.randint(1, 2)
+        r = random.randint(1, 4)
         if r == 1:
             damage = self.afkforlongxi
-            hero.health = hero.health - damage
+            hero.health = hero.health - damage            
             print('ender_dragon喷龙息，造成了%d的伤害' % damage)
+        elif r == 3:
+            damage = self.afkforlongxi
+            hero.health = hero.health - damage
+            print('ender_dragon暴击龙息，造成了%d的伤害' % damage)
 
 
 # =========={诸城市}=================
@@ -147,9 +167,11 @@ if __name__ == '__main__':
             hero.curse(ender_dragon)
         elif key == "4":
             if hero.persuade(ender_dragon):
+                
                 print("劝降成功，退出代码：0")
                 break
             else:
+                
                 print("[ERROR]非零退出劝降！退出代码：1")
                 continue
 
@@ -162,14 +184,10 @@ if __name__ == '__main__':
             print("[WARNING]请重新输入")
             continue
 
-        if b == 1:
-            ender_dragon.attack(hero)
-        elif b == 2:
-            ender_dragon.fire(hero)
-        elif b == 3:
-            ender_dragon.treatment()
-        else:
-            ender_dragon.spit_Dragon_Breath(hero)
+        ender_dragon.attack(hero)
+        ender_dragon.fire(hero)
+        ender_dragon.treatment()
+        ender_dragon.spit_Dragon_Breath(hero)
 
         if hero.health <= 0:
             print("[ERROR]Mission Failed")
